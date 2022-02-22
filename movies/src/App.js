@@ -1,10 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+
+import { TemporaryHome } from './views/TemporaryHome';
 
 function App() {
   return (
     <div className="App">
-        <h1>Team MIT xPro</h1>
+        <TemporaryHome />
     </div>
   );
 }
