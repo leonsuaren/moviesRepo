@@ -4,7 +4,7 @@ import { TemporaryHome } from './views/TemporaryHome';
 
 function App() {
   return (
-    <div className="App">
+    <div>
         <TemporaryHome />
     </div>
   );
