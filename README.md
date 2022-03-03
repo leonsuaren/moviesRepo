@@ -15,4 +15,10 @@
       * The app should run in **port 3000**
       * In your browser go to: **http://localhost:3000**
 
-        
+## Working Agreements
+* Name branches based on Jira tasks.
+* Create your local branches based on the most recent version of main.
+* Do not push anything direct to the main branch.
+* Always push your branch to the Repo for review, your changes need to be approved in order to be merged in master.
+* Share all relevant information about the project through Slack (PR's, merge, questions, etc.).
+* Pull the main repo frequently so you have all the most recent changes.
