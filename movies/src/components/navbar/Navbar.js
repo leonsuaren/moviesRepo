@@ -10,7 +10,8 @@ export const Navbar= () =>{
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">  
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
+        <li><Link to='movie-favorites' className='nav-link' data-test='favorites-component'>Favorites</Link></li> 
       </ul>
    </div>
   </div>
