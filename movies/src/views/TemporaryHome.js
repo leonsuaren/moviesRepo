@@ -1,8 +1,8 @@
-import React from 'react';
-import { Temporary } from '../components/Temporary';
+// import React from 'react';
+// import { Temporary } from '../components/Temporary';
 
-export const TemporaryHome = () => {
-  return(
-    <Temporary />
-  )
-};
+// export const TemporaryHome = () => {
+//   return(
+//     <Temporary />
+//   )
+// };
