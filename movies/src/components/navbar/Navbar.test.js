@@ -19,3 +19,9 @@ test('renders actors link', () => {
     const actorsLinkComponent= result.find("[data-test='actors-link-component']");
     expect(actorsLinkComponent.length).toBe(1);
 });
+
+test('renders now-playing link', () => {
+    const result = shallow(<Navbar />);
+    const nowPlayingComponent= result.find("[data-test='now-playing-component']");
+    expect(nowPlayingComponent.length).toBe(1);
+});
