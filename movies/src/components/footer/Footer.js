@@ -15,7 +15,7 @@ export const Footer = () => {
           <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Now Playing</a></li>
           <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Favorites</a></li>
           <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Control Panel</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Login In</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Log In</a></li>
           <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Log Out</a></li>
           <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Sign Up</a></li>
         </ul>
