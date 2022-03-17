@@ -13,6 +13,7 @@ export const Navbar= () =>{
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li><Link to='actors' className='nav-link' data-test='actors-link-component'>Actors</Link></li>
           <li><Link to='movie-favorites' className='nav-link' data-test='favorites-component'>Favorites</Link></li>
+          <li><Link to='now-playing' className='nav-link' data-test='now-playing-component'>Now Playing</Link></li>
       </ul>
    </div>
   </div>
