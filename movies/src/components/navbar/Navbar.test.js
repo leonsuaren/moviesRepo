@@ -1,6 +1,7 @@
 import {shallow} from 'enzyme';
 import {Navbar} from './Navbar';
 
+
 test('render navbar',()=>{
 const result = shallow(<Navbar />);
 const navbarComponent = result.find("[data-test='navbar-component']");
@@ -11,4 +12,10 @@ test('renders favorites link', () => {
     const result = shallow(<Navbar />);
     const favoritesComponent = result.find("[data-test='favorites-component']");
     expect(favoritesComponent.length).toBe(1);
+});
+
+test('renders actors link', () => {
+    const result = shallow(<Navbar />);
+    const actorsLinkComponent= result.find("[data-test='actors-link-component']");
+    expect(actorsLinkComponent.length).toBe(1);
 });
