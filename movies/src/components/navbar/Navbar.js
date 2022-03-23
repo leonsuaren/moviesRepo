@@ -12,7 +12,7 @@ export const Navbar= () =>{
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li><Link to='actors' className='nav-link' data-test='actors-link-component'>Actors</Link></li>
-          <li><Link to='movie-favorites' className='nav-link' data-test='favorites-component'>Favorites</Link></li>
+          <li><Link to='favorites' className='nav-link' data-test='favorites-component'>Favorites</Link></li>
           <li className="nav-item"><Link to='now-playing' className='nav-link active' data-test='now-playing-component'>Now Playing</Link></li>
       </ul>
    </div>
