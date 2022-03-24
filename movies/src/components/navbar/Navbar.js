@@ -50,7 +50,7 @@ export const Navbar = () => {
                 </li>
                 <li>
                   <Link
-                    to="movie-favorites"
+                    to="favorites"
                     className="dropdown-item"
                     data-test="favorites-component"
                   >
