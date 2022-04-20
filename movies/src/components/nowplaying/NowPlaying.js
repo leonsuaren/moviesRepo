@@ -1,55 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 export const NowPlaying = () => {
-  return(
-        <div
-      id="carousel"
-      class="carousel slide"
-      data-bs-ride="carousel"
-    >
-        <div class="hideLeft">
-          <img
-            src="https://i1.sndcdn.com/artworks-000165384395-rhrjdn-t500x500.jpg"
-            alt="..."
-          />
-        <div class="prevLeftSecond">
-          <img
-            src="https://i1.sndcdn.com/artworks-000185743981-tuesoj-t500x500.jpg"
-            alt="..."
-          />
-        </div>
-        <div class="prev">
-          <img
-            src="https://i1.sndcdn.com/artworks-000185743981-tuesoj-t500x500.jpg"
-            alt="..."
-          />
-        </div>
-        <div class="selected">
-          <img
-            src="https://i1.sndcdn.com/artworks-000062423439-lf7ll2-t500x500.jpg"
-          />
-        <div class="next">
-          <img
-            src="https://i1.sndcdn.com/artworks-000028787381-1vad7y-t500x500.jpg"
-          />
-        </div>
-        <div class="nextRightSecond">
-          <img
-            src="https://i1.sndcdn.com/artworks-000108468163-dp0b6y-t500x500.jpg"
-          />
-        </div>
-        <div class="hideRight">
-          <img
-            src="https://i1.sndcdn.com/artworks-000064920701-xrez5z-t500x500.jpg"
-          />
-        </div>
-      </div>
+    const [movies, setMovies] = useState([]);
+    const [error, setError] = useState(null);
 
-      <div class="buttons">
-        <button id="prev">Prev</button>
-        <button id="next">Next</button>
-      </div>
+    useEffect(() => {
+        axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=0b89ce6dda9fe5ee93d7dfc562a4e1e7&language=en-US&page=1')
+        .then((res) => {
+            setMovies(res.data.results);
+        })
+        .catch((error) => {
+            setError(error);
+        })
+        console.log(movies);
+    }, []);
+    
+    return (
+       <div class="now-playing">
+           <h1>Now Playing</h1>
+           <div class="container-fluid">   
+                <div class="row row-cols-1 row-cols-md-6">
+                    {
+                        movies.map((movie) => {
+                            return (
+                                <div class="col mb-4">
+                                    <div class="card">
+                                        <a href=""><img class="card-img-top" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt='now playing movie' /></a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">{`${movie.title}`}</h5>
+                                        </div>
+                                    </div>   
+                                </div> 
+                            )
+                        })
+                    }
+                </div>
+            { error && <h1>error</h1> }
+        </div>
     </div>
-    </div>
-  );
-};
+    )
+}
