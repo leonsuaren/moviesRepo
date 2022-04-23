@@ -10,7 +10,7 @@ export const NowPlaying = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=0b89ce6dda9fe5ee93d7dfc562a4e1e7&language=en-US&page=1')
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
       .then((res) => {
         setTimeout(() => {
           setLoading(false);
@@ -21,7 +21,6 @@ export const NowPlaying = () => {
         setError(error);
         setLoading(false)
       })
-    console.log(movies);
   }, []);
 
   return (
