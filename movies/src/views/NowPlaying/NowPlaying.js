@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { MovieCard } from '../../components/moviecard/moviecard';
 
 export const NowPlaying = () => {
     const [movies, setMovies] = useState([]);
@@ -24,14 +25,9 @@ export const NowPlaying = () => {
                     {
                         movies.map((movie) => {
                             return (
-                                <div class="col mb-4">
-                                    <div class="card">
-                                        <a href=""><img class="card-img-top" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt='now playing movie' /></a>
-                                        <div class="card-body">
-                                            <h5 class="card-title">{`${movie.title}`}</h5>
-                                        </div>
-                                    </div>   
-                                </div> 
+                                <div>
+                                    <MovieCard movie={movie} />
+                                </div>
                             )
                         })
                     }
