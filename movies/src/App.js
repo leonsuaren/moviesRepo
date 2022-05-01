@@ -1,6 +1,6 @@
 import './App.css';
 import { Navbar } from './components/navbar/Navbar';
-import { Home } from './components/home/Home';
+import { Home } from './views/home/Home';
 import { Footer } from './components/footer/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Favorites } from './views/Favorites/Favorites';
