@@ -5,7 +5,7 @@ import { Footer } from './components/footer/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Favorites } from './views/Favorites/Favorites';
 import { NowPlaying } from './views/NowPlaying/NowPlaying';
-import { Popular } from './components/popular/Popular';
+import { Popular } from './views/popular';
 
 function App() {
   return (
