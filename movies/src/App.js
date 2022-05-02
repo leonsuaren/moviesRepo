@@ -1,11 +1,11 @@
 import './App.css';
 import { Navbar } from './components/navbar/Navbar';
-import { Home } from './components/home/Home';
+import { Home } from './views/home/Home';
 import { Footer } from './components/footer/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Favorites } from './views/Favorites/Favorites';
-import { NowPlaying } from '../src/components/nowplaying/NowPlaying';
-import { Popular } from './components/popular/Popular';
+import { NowPlaying } from './views/NowPlaying/NowPlaying';
+import { Popular } from './views/popular';
 
 function App() {
   return (
