@@ -4,14 +4,14 @@ import { MovieCard } from '../../components/moviecard/moviecard';
 
 import { Spinner } from '../../components/spinner/Spinner';
 
-export const NowPlaying = () => {
+export const TopRated = () => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`${process.env.REACT_APP_API_BASE_URL}movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
       .then((res) => {
         setTimeout(() => {
           setLoading(false);
@@ -26,7 +26,7 @@ export const NowPlaying = () => {
 
   return (
     <div className="movie-gallery">
-      <h1>Now Playing</h1>
+      <h1>Top Rated</h1>
       <div className="container-fluid">
         {
           loading ? <Spinner /> :

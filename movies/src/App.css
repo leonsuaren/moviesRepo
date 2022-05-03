@@ -11,16 +11,11 @@
   bottom: 50px;
 }
 
-/* .card-img-top {
-  height: 300px;
-  width: 100%;
-} */
-
-.now-playing {
+.movie-gallery {
   margin: 100px 200px;
 }
 
-.now-playing h1 {
+.movie-gallery h1 {
   font-size: 4em;
   text-align: center;
   padding-bottom: 90px;
