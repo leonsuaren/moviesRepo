@@ -79,9 +79,18 @@ export const Navbar = () => {
                   <Link
                     to="top-rated"
                     className="dropdown-item"
-                    data-test="favorites-component"
+                    data-test="top-rated-component"
                   >
                     Top rated
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="register"
+                    className="dropdown-item"
+                    data-test="register-component"
+                  >
+                    Register
                   </Link>
                 </li>
               </ul>

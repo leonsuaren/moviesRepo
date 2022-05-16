@@ -7,6 +7,7 @@ import { Favorites } from './views/Favorites/Favorites';
 import { NowPlaying } from './views/NowPlaying/NowPlaying';
 import { Popular } from './views/popular';
 import { TopRated } from './views/TopRated/TopRated';
+import { Register } from './views/Register/Register';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="now-playing" element={<NowPlaying />} />
           <Route path="popular" element={<Popular/>} />
           <Route path="top-rated" element={<TopRated />} />
+          <Route path="register" element={<Register />} />
         </Routes>
         <Footer />
       </Router>
