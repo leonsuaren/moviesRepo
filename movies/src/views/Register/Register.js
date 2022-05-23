@@ -77,7 +77,7 @@ export const Register = () => {
             <input
                 id="password"
                 name="password"
-                type="text"
+                type="password"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.password}
@@ -89,7 +89,7 @@ export const Register = () => {
             <input
                 id="confirmPassword"
                 name="confirmPassword"
-                type="text"
+                type="password"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.confirmPassword}
