@@ -1,7 +1,5 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import useLocalStorage from "react-use-localstorage";
-
 
 const validate = values => {
     const errors = {};
@@ -29,10 +27,6 @@ const validate = values => {
   };
 
 export const Register = () => {
-  const [userName, setUserName] = useLocalStorage("username", "");
-  const [emailAddress, setEmailAddress] = useLocalStorage("emailAddress", "");
-  const [passWord, setPassWord] = useLocalStorage("passWord", "");
-
 
   const formik = useFormik({
     initialValues: {
@@ -43,9 +37,9 @@ export const Register = () => {
     },
     validate,
     onSubmit: values => {
-      setUserName(values.username);
-      setEmailAddress(values.emailAddress);
-      setPassWord(values.password);
+      localStorage.setItem("userName", values.username);
+      localStorage.setItem("email", values.email);
+      localStorage.setItem("password", values.password);
       alert('You have successfully registered!');
     },
   });
