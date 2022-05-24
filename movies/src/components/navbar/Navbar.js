@@ -24,6 +24,10 @@ export const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav">
+      
+            <Link to='/login' className="nav-link">
+            Login
+            </Link>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
