@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 
 import { useFormik } from 'formik';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const Login = () => {
   const [success, setSuccess] = useState();
   const [error, setError] = useState();
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -14,7 +15,8 @@ export const Login = () => {
       password: ''
     },
     onSubmit: values => {
-      alert('login success');
+      localStorage.setItem('userLogin', values.email);
+      navigate('/');
     }
   });
 
@@ -29,7 +31,7 @@ export const Login = () => {
                   <div className="card-body p-md-5 mx-md-4">
 
                     <div className="text-center">
-                      <img className='img' src="Tmdb-new-logo.png" alt="logo" />
+                      <img className='img' src="movies-logo.png" alt="logo" />
                     </div>
                     <hr />
                     <form onSubmit={formik.handleSubmit}>
@@ -59,7 +61,6 @@ export const Login = () => {
                         </Link>
                       </div>
                     </form>
-
                   </div>
                 </div>
                 <div className="col-lg-6 d-flex align-items-center bg-primary bg-gradient">
