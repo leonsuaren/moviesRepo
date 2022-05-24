@@ -1,5 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import useLocalStorage from "react-use-localstorage";
+
 
 const validate = values => {
     const errors = {};
@@ -27,6 +29,11 @@ const validate = values => {
   };
 
 export const Register = () => {
+  const [userName, setUserName] = useLocalStorage("username", "");
+  const [emailAddress, setEmailAddress] = useLocalStorage("emailAddress", "");
+  const [passWord, setPassWord] = useLocalStorage("passWord", "");
+
+
   const formik = useFormik({
     initialValues: {
       username: '',
@@ -36,73 +43,75 @@ export const Register = () => {
     },
     validate,
     onSubmit: values => {
+      setUserName(values.username);
+      setEmailAddress(values.emailAddress);
+      setPassWord(values.password);
       alert('You have successfully registered!');
     },
   });
+
   return (
     <div className="register-container" data-test='register-component'>
         <div className="register-form">
             <img className="mb-2" src="movies-logo.png" alt="" width="100" height="100"/>
             <hr />
+              <form onSubmit={formik.handleSubmit}>
+                <p htmlFor="PleaseRegisterYourAccount">Please register your account</p>
+                <input
+                    id="username"
+                    name="username"
+                    type="text"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.username}
+                    className="formik-input"
+                    placeholder="Username"
+                />
+                {formik.errors.username ? <div style={{ color: 'red' }}>{formik.errors.username}</div> : null}
+                <label htmlFor="username">Username</label>
+                
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.email}
+                    className="formik-input"
+                    placeholder="Email address"
+                />
+                {formik.errors.email ? <div style={{ color: 'red' }}>{formik.errors.email}</div> : null}
+                <label htmlFor="email">Email</label>
+                
+                
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.password}
+                    className="formik-input"
+                />
+                {formik.errors.password ? <div style={{ color: 'red' }}>{formik.errors.password}</div> : null}
+                <label htmlFor="password">Password</label>
 
-            <form onSubmit={formik.handleSubmit}>
-            <p htmlFor="PleaseRegisterYourAccount">Please register your account</p>
-            <input
-                id="username"
-                name="username"
-                type="text"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.username}
-                className="formik-input"
-                placeholder="Username"
-            />
-            {formik.errors.username ? <div style={{ color: 'red' }}>{formik.errors.username}</div> : null}
-            <label htmlFor="userame">Username</label>
-            
-            <input
-                id="email"
-                name="email"
-                type="email"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.email}
-                className="formik-input"
-                placeholder="Email address"
-            />
-            {formik.errors.email ? <div style={{ color: 'red' }}>{formik.errors.email}</div> : null}
-            <label htmlFor="email">Email</label>
-            
-            
-            <input
-                id="password"
-                name="password"
-                type="password"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.password}
-                className="formik-input"
-            />
-            {formik.errors.password ? <div style={{ color: 'red' }}>{formik.errors.password}</div> : null}
-            <label htmlFor="password">Password</label>
+                <input
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    type="password"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.confirmPassword}
+                    className="formik-input"
+                />
+                {formik.errors.confirmPassword ? <div style={{ color: 'red' }}>{formik.errors.confirmPassword}</div> : null}
+                <label htmlFor="ConfirmPassword">Confirm Password</label>
 
-            <input
-                id="confirmPassword"
-                name="confirmPassword"
-                type="password"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.confirmPassword}
-                className="formik-input"
-            />
-            {formik.errors.confirmPassword ? <div style={{ color: 'red' }}>{formik.errors.confirmPassword}</div> : null}
-            {/* {formik.touched.password && formik.values.confirmPassword !== formik.values.password ? <div style={{ color: 'red' }}>{formik.errors.confirmPassword}</div> : null} */}
-            <label htmlFor="ConfirmPassword">Confirm Password</label>
+                <hr />
 
-            <hr />
-
-            <button type="submit" class="btn btn-primary">Register</button>
-            </form>
+                <button type="submit" class="btn btn-primary">Register</button>
+              </form>
         </div>
         <div className="register-sidebar">
             <div className="sidebar-info">
